@@ -6,6 +6,7 @@ class CreateFavorites < ActiveRecord::Migration[5.2]
       t.string :school_name
       t.string :rating
       t.string :zip_code
+      t.string :description
       t.timestamps
     end
   end
