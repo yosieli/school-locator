@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2019_08_07_150133) do
   end
 
   create_table "schools", force: :cascade do |t|
-    t.integer "user_id"
     t.string "school_name"
     t.integer "rating"
     t.string "zip_code"
@@ -40,7 +39,6 @@ ActiveRecord::Schema.define(version: 2019_08_07_150133) do
     t.string "first_name"
     t.string "last_name"
     t.string "password"
-    t.string "school_id"
     t.string "zip_code"
     t.string "current_grade"
     t.datetime "created_at", null: false
