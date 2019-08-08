@@ -4,19 +4,23 @@ import { BrowserRouter } from 'react-router-dom'
 import { Route } from 'react-router'
 import SignUp from './components/signUp';
 import SignIn from './components/signIn';
-import Home from './components/home.js'
+import NavHome from './components/nav.js'
+import MapContainer from './components/mapContainer';
 
 function App() {
   return (
     <div className="App">
-      {/* <div>
+      <div>
           <BrowserRouter >
-            <NavBar />
-            <Route exact path='/sign-in' component={SignIn} />
-            <Route exact path='/sign-up' component={SignUp} />
+            
+            <Route exact path = '/sign-in' component={SignIn} />
+            <Route exact path = '/sign-up' component={SignUp} />
+            <Route exact path = '/home' component={NavHome}/>
+            <Route exact path = '/map' component={MapContainer}/>
+      
           </BrowserRouter>
-        </div> */}
-        <Home/>
+         
+        </div>
     </div>
   );
 }

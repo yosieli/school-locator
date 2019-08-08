@@ -26,7 +26,19 @@ export default class SignUp extends React.Component {
                 current_grade: this.state.current_grade
 
             })
-            })
+            }).then(user => {
+                console.log(user)
+                if(this.state.first_name === '' || this.state.password === '' ){
+                  alert('Please input values for first_name or password')
+                }
+                else if(user.statusText === "Internal Server Error"){
+                  alert('first_name already taken. Please select another.')
+                }
+                else{
+      
+                  this.props.history.push('/sign-in')
+                }
+              })
 
     }
 

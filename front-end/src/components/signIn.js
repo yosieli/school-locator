@@ -15,7 +15,7 @@ export default class SignIn extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        fetch('http://localhost:3000/signup',{
+        fetch('http://localhost:3000/signin',{
             method: 'POST',
             headers:{
                 'Content-Type':'application/json'
@@ -25,8 +25,23 @@ export default class SignIn extends React.Component {
                 password: this.state.password,
 
             })
+        }).then(res=>res.json())
+
+        .then(user => {
+            console.log('this is our user', user)
+          if(user.error){
+            alert('Incorrect first_name or Password. Please try again.')
+            this.props.history.push('/sign-in')
+          }
+          else{
+            localStorage.setItem('token',user.auth_token)
+            localStorage.setItem('user',user.id)
+            this.props.history.push('/home')
+          }
+          
         })
-        console.log('clicked')
+
+        
     }
 
 

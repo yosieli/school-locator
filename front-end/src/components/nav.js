@@ -6,8 +6,8 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import FormControl from 'react-bootstrap/FormControl'
 
- class Home extends React.Component{
-     render(){
+ function  NavHome (props) {
+   
          return(
             <Navbar bg="light" expand="lg">
             <Navbar.Brand href="#home">school locator</Navbar.Brand>
@@ -38,12 +38,19 @@ import FormControl from 'react-bootstrap/FormControl'
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                 <Button variant="outline-success">Search</Button>
               </Form>
-              <Nav.Link href= "#logout" className="mr-auto">Sign Out</Nav.Link>
+              {/* <Nav.Link href= "#logout" className="mr-auto">Sign Out</Nav.Link> */}
+              <Nav.Link onClick={() => {
+                localStorage.clear()
+                props.history.push('/sign-in')
+  
+              }} > Sign-Out 
+              </Nav.Link>
+
             </Navbar.Collapse>
           </Navbar>
           
          )
-     }
+     
     }
 
-export default Home
+export default NavHome
