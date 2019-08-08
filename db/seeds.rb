@@ -5,7 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-feven = User.create(first_name:'feven',last_name:'teclay',password:'1',zip_code: 77081,current_grade:'pre-k')
-silva = School.create(school_name:'silva',rating:5,zip_code: 77081,description: 'greate school')
- Favorite.create(user_id: feven.id,school_id: silva.id,school_name: "silva",rating: 4,zip_code: 77081 ,description: "greate school")
+User.destroy_all
+School.destroy_all
+Favorite.destroy_all
+
+feven = User.create(first_name:'feven', last_name:'teclay', password:'1', zip_code: 77081, current_grade:'pre-k')
+silva = School.create(school_name:'silva', rating:5,zip_code: 77081, description: 'greate school')
+ Favorite.create(user: feven, school: silva)
  

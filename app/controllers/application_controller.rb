@@ -11,7 +11,7 @@ class ApplicationController < ActionController::API
             token = request.headers['Authorization'].split(' ')[1]
             # type, token = request.headers['Authorization'].split(' ')
             
-            payload = JWT.decode(token, 'a;lsdkjfgh')[0]
+            payload = JWT.decode(token, 'jdhfjkdshsdjsd')[0]
 
             # payload, header = JWT.decode(token, 'a;slkdjfgh')
             if(payload['type'] == 'user')

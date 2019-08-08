@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   # resources :users
   resources :favorites
   resources :schools
+  # resources :users
 
   post '/signup', to: 'users#create'
-  get '/signin', to: 'users#authenticate'
+  post '/signin', to: 'users#authenticate'
 
 end
