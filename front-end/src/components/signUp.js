@@ -43,9 +43,10 @@ export default class SignUp extends React.Component {
 
         <div className="login-page">
             <h1 > <strong> Welcome to school locator </strong> </h1>
-              
+            <div autoPlay muted loop id="video-background"  style={{backgroundColor: 'gray'}}>
+            </div>
                 <div className="form">
-                    <form onSubmit={this.handleSubmit} className="login-form">
+                    <form onSubmit={this.handleSubmit} className="login-form" >
                     <input name = "first_name"  type="name" placeholder="first_name" onChange={this.handleChange}/>
                     <input name = "last_name"    type = "name" placeholder = "last_name" onChange={this.handleChange}/>
                     <input name = "password"  type="name" placeholder="password" onChange={this.handleChange}/>
@@ -53,7 +54,7 @@ export default class SignUp extends React.Component {
                     <input name = "current_grade"    type = "name" placeholder = "current_grade" onChange={this.handleChange}/>
                     <button style={{"border-radius": "7px"}}>Sign Up</button>
                     
-                        <p className="message"><h3>Already registered?</h3> <a href=""><h3>Sign In</h3></a></p>
+                        <p className="message"><h3>Already registered?</h3> <a href="sign-in"><h3>Sign In</h3></a></p>
                     </form>
                 </div>
                 <h2> <strong> </strong> </h2>

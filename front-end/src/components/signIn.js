@@ -42,7 +42,7 @@ export default class SignIn extends React.Component {
                 <input name = "password"    type = "name" placeholder = "password" onChange={this.handleChange}/>
                   <button style={{"border-radius": "7px"}}>Sign In</button>
                    
-                    <p className="message"> <h3>Not registered?</h3><a href="">Sign Up</a></p>
+                    <p className="message"> <h3>Not registered?</h3><a href="sign-up">Sign Up</a></p>
                 </form>
                 </div>
                 <h2> <strong> </strong> </h2>
