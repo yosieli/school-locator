@@ -5,7 +5,7 @@ import { Route } from 'react-router'
 import SignUp from './components/signUp';
 import SignIn from './components/signIn';
 import NavHome from './components/nav.js'
-import MapContainer from './components/mapContainer';
+import MapContainer from './components/mapContainer'
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
             <Route exact path = '/sign-in' component={SignIn} />
             <Route exact path = '/sign-up' component={SignUp} />
             <Route exact path = '/home' component={NavHome}/>
-            <Route exact path = '/map' component={MapContainer}/>
+            <Route exact path = '/map' component = {MapContainer}/>
       
           </BrowserRouter>
          

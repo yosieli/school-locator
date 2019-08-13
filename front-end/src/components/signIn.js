@@ -49,7 +49,9 @@ export default class SignIn extends React.Component {
         return(
 
         <div className="login-page">
-            <h1 > <strong> Welcome to school locator </strong> </h1>
+            <h3 > <strong> Welcome to school locator </strong> </h3>
+              <br></br>
+              <br></br>
               
                 <div className="form">
                 <form onSubmit={this.handleSubmit} className="login-form">

@@ -34,6 +34,10 @@ export default class SignUp extends React.Component {
                 else if(user.statusText === "Internal Server Error"){
                   alert('first_name already taken. Please select another.')
                 }
+                // else if (this.state.first_name === user.target.value){
+                //   alert('username already exists.try other user name')
+                // }
+                
                 else{
       
                   this.props.history.push('/sign-in')
@@ -54,7 +58,8 @@ export default class SignUp extends React.Component {
         return(
 
         <div className="login-page">
-            <h1 > <strong> Welcome to school locator </strong> </h1>
+            <h3 > <strong> Welcome to school locator </strong> </h3>
+              <br></br> <br></br>
             <div autoPlay muted loop id="video-background"  style={{backgroundColor: 'gray'}}>
             </div>
                 <div className="form">
