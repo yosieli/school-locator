@@ -1,6 +1,8 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { Map, GoogleApiWrapper, Marker,InfoWindow} from 'google-maps-react'
 import Details from './details'
+import Button from 'react-bootstrap/Button'
 
 
  class MapContainer extends React.Component {
@@ -18,13 +20,26 @@ import Details from './details'
 
 
     onMarkerClick = (props, marker, e) => {
-        console.log(this.state.schools)
         this.setState({
         selectedPlace: props,
         activeMarker: marker,
         showingInfoWindow: !this.state.showingInfoWindow
         })
         
+    }
+
+    onInfoWindowOpen(props, e, selectedPlace) {
+        const button = (
+        <Button
+            variant="outline-success"
+            onClick={()=>this.addToFavorites(selectedPlace)}
+        >Add To Favorites
+        </Button>
+        )
+        ReactDOM.render(
+        React.Children.only(button),
+        document.getElementById("i")
+        )
     }
 
     onClose = props => {
@@ -56,40 +71,51 @@ import Details from './details'
     
     displayMarkers = () => {
         return this.state.schools.map((school, index) => {
-            return <Marker key={index} id={school.id} position={{
+            return < Marker key={index} id={school.id} position={{
             lat: school.latitude,
             lng: school.longitude,
             }}
-            onClick = {this.onMarkerClick}   />
+            onClick = {this.onMarkerClick}  
+             />
         })
     }
 
 
     addToFavorites = (school) => {
-        fetch(`http://localhost:3000/favorites/${localStorage.getSchool('user')}/${school.id}`,{
+        
+        fetch(`http://localhost:3000/addFavorites`,{
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getSchool('token')}` 
+                'Authorization': `Bearer ${localStorage.getItem('token')}` 
             },
             body: JSON.stringify({
-                user_id: localStorage.getSchool('user'),
+                user_id: localStorage.getItem('user'),
                 school_id: school.id,
                 school_name: school.school_name,
                 description: school.description,
+                rating: school.rating
+                
             })
         })
-        console.log (' clicked')
+        .then(res =>res.json())
+        .then(result => {console.log(result)})
+      
     }
+    
 
     
 
     render() {
+    let selectedPlace = this.state.schools.find(school => school.id === this.state.selectedPlace.id) || null || {}
+    console.log('mapContainer loaded')
+
         return (
             <div>
+            {console.log('this is schools', this.state.schools)}
                 <Map 
                     google={this.props.google}
-                    zoom={8}
+                    zoom={12}
                     style={{width: '100%', height: '100%', topmargin: '10px'}}
                     initialCenter={{ lat: 29.731589, lng: -95.310856}}
                 >
@@ -97,12 +123,16 @@ import Details from './details'
                 {this.displayMarkers()}
 
                 <InfoWindow 
-                marker={this.state.activeMarker}
-                visible={this.state.showingInfoWindow}
-                onClose={this.onClose}
-
+                    marker={this.state.activeMarker}
+                    visible={this.state.showingInfoWindow}
+                    onClose={this.onClose}
+                    onOpen={e => {
+                    this.onInfoWindowOpen(this.props, e, selectedPlace);
+                    }}
                 > 
-                <Details school ={this.state.schools && this.state.selectedPlace ? this.state.schools.find(school=> school.id === this.state.selectedPlace.id) || {} : null} addToFavorites = {this.addToFavorites}/>
+                   <Details school = {selectedPlace}  />
+                    <div id = "i"/>
+
                 </InfoWindow>
 
                 </Map>

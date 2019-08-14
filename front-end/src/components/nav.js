@@ -17,7 +17,7 @@ import MapContainer from './mapContainer';
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto" >
                 <Nav.Link href="/sign-in"><h5 style={{color: "white"}}>Home</h5></Nav.Link>
-                <Nav.Link href="#link"><h5 style={{color: "white"}}>Favorites</h5></Nav.Link>
+                <Nav.Link href="/favorites"><h5 style={{color: "white"}}>Favorites</h5></Nav.Link>
                 <NavDropdown title="Grades" id="basic-nav-dropdown" style={{color: "white"}}>
                   <NavDropdown.Item href="#action/3.1">pre-k</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">first_grade</NavDropdown.Item>
