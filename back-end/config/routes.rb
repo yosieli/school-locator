@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   # resources :users
   resources :favorites
   resources :schools
-  # resources :users
-
+  
   post '/signup', to: 'users#create'
   post '/signin', to: 'users#authenticate'
+  post '/addFavorites', to: 'favorites#addToFavorites'
+  get '/favoriteSchools/:id', to: "favorites#myFavorite"
+  delete '/favoriteSchools/:id/:school_id', to: "favorites#destroy"
 
+  
 end
