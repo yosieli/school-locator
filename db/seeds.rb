@@ -5,11 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
-School.destroy_all
-Favorite.destroy_all
+User.delete_all
+School.delete_all
+Favorite.delete_all
 
 feven = User.create(first_name:'feven', last_name:'teclay', password:'1', zip_code: 77081, current_grade:'Pre-kindergarten')
+yosyas = User.create(first_name: 'yosyas', last_name: 'tsegay', password: '1',zip_code: 77079, current_grade: 'first_grade')
 crockett = School.create(school_name:'Crockett Elementary School', rating:3, zip_code: 77007, description: 'greate school',latitude: 29.774787,longitude: -95.380721)
 port = School.create(school_name:'Port Houston Elementary School', rating:2.7, zip_code: 71001, description: 'greate school',latitude: 29.763005, longitude: -95.282988)
 cathedral = School.create(school_name:'Cathedral House Episcopal School', rating:5, zip_code: 77002, description: 'greate school',latitude: 29.759994, longitude: -95.360919)
@@ -21,10 +22,7 @@ heights = School.create(school_name:'Heights High School', rating:4.3, zip_code:
 lamar = School.create(school_name:'Cathedral House Episcopal School', rating:3.3, zip_code: 77098, description: 'greate school',latitude: 29.743212, longitude: -95.425804)
 
 
-# silva2 = School.create(school_name:'barka', rating:10, zip_code: 77079, description: 'greate school')
-# silva3 = School.create(school_name:'warsay', rating:9, zip_code: 77072, description: 'greate school')
-# silva4 = School.create(school_name:'denden', rating:6, zip_code: 77081, description: 'greate school')
-
  Favorite.create(user: feven, school: crockett)
+ Favorite.create(user: feven, school: port)
 
-#  77029
+
