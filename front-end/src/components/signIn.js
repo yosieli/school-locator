@@ -49,7 +49,7 @@ export default class SignIn extends React.Component {
         return(
 
         <div className="login-page">
-            <h3 > <strong> Welcome to school locator </strong> </h3>
+            <h3 > <strong> Welcome To School Finder </strong> </h3>
               <br></br>
               <br></br>
               
@@ -59,11 +59,11 @@ export default class SignIn extends React.Component {
                 <input name = "password"    type = "name" placeholder = "password" onChange={this.handleChange}/>
                   <button style={{"border-radius": "7px"}}>Sign In</button>
                    
-                    <p className="message"> <h3>Not registered?</h3><a href="sign-up">Sign Up</a></p>
+                    <p className="message"><h3>Not registered?<a href="sign-up"><br></br>Sign Up</a></h3></p>
                 </form>
                 </div>
                 <h2> <strong> </strong> </h2>
               </div>
         )
-    }
+  }
 }

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { Map, GoogleApiWrapper, Marker,InfoWindow} from 'google-maps-react'
 import Details from './details'
 import Button from 'react-bootstrap/Button'
+import NavHome  from './nav.js'
 
 
  class MapContainer extends React.Component {
@@ -10,8 +11,7 @@ import Button from 'react-bootstrap/Button'
     constructor (props){
         super(props)
         this.state = {
-            schools: [{latitude: 29.774787, longitude: -95.380721},
-                     {latitude: 29.763005, longitude: -95.282988}],
+            schools: [],
             showingInfoWindow: false,
             activeMarker: {},
             selectedPlace: {}
@@ -32,6 +32,7 @@ import Button from 'react-bootstrap/Button'
         const button = (
         <Button
             variant="outline-success"
+            size = 'lg'
             onClick={()=>this.addToFavorites(selectedPlace)}
         >Add To Favorites
         </Button>
@@ -70,12 +71,14 @@ import Button from 'react-bootstrap/Button'
 
     
     displayMarkers = () => {
-        return this.state.schools.map((school, index) => {
+        let filteredSchools = this.state.schools.filter( school => school.zip_code.includes(this.props.searchTerm))
+        return filteredSchools.map((school, index) => {
             return < Marker key={index} id={school.id} position={{
             lat: school.latitude,
             lng: school.longitude,
             }}
             onClick = {this.onMarkerClick}  
+            // onChange ={this.props.onSearch}
              />
         })
     }
@@ -112,7 +115,7 @@ import Button from 'react-bootstrap/Button'
 
         return (
             <div>
-            {console.log('this is schools', this.state.schools)}
+            {console.log('this is schools', selectedPlace)}
                 <Map 
                     google={this.props.google}
                     zoom={12}

@@ -35,12 +35,12 @@ import FavoriteCards from './favoriteCards'
                     'Authorization': `Bearer ${localStorage.getItem('token')}` 
                 }
             })
-            console.log('remove school',school.id)
+             console.log('remove school',school.school_id)
             let mySchools = this.state.favorites.filter(schools => {
                 return schools.id !== school.id
             })
             this.setState({
-                favorites: mySchools,
+                favorites: mySchools
             })
      }
 

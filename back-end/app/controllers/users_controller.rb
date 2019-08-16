@@ -8,12 +8,18 @@ class UsersController < ApplicationController
     def create
     user = User.create(users_params)
     render json: user
-    # raul doesnt know if this is right but it works
+  
     end
 
     def show
       user = User.find(params[:id])
       render json: user
+    end
+
+    def applicationForm
+    user = User.create(users_params)
+    render json: user
+    
     end
 
 

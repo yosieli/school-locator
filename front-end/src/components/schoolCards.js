@@ -9,7 +9,7 @@ class SchoolCards extends React.Component {
         return(
             <div>
                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
+                    {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
                     <Card.Body>
                         <Card.Title>{this.props.school.school_name}</Card.Title>
                         <Card.Text>

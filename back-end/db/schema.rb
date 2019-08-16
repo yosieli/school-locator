@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_150133) do
     t.integer "rating"
     t.string "zip_code"
     t.string "description"
+    t.string "grade"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", null: false
