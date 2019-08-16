@@ -71,16 +71,32 @@ import NavHome  from './nav.js'
 
     
     displayMarkers = () => {
-        let filteredSchools = this.state.schools.filter( school => school.zip_code.includes(this.props.searchTerm))
-        return filteredSchools.map((school, index) => {
-            return < Marker key={index} id={school.id} position={{
-            lat: school.latitude,
-            lng: school.longitude,
-            }}
-            onClick = {this.onMarkerClick}  
-            // onChange ={this.props.onSearch}
-             />
-        })
+        console.log('filter',this.props.filterTerm)
+        let filteredSchools = this.state.schools.filter( school => school.zip_code.includes(this.props.searchTerm) && school.grade.includes(this.props.filterTerm))
+        if(filteredSchools){
+            return filteredSchools.map((school, index) => {
+                return < Marker key={index} id={school.id} position={{
+                lat: school.latitude,
+                lng: school.longitude,
+                }}
+                onClick = {this.onMarkerClick}  
+                // onChange ={this.props.onSearch}
+                />
+            })
+        }
+
+        else{
+            return this.state.schools.map((school, index) => {
+                return < Marker key={index} id={school.id} position={{
+                lat: school.latitude,
+                lng: school.longitude,
+                }}
+                onClick = {this.onMarkerClick}  
+                // onChange ={this.props.onSearch}
+                />
+            })
+
+        }
     }
 
 

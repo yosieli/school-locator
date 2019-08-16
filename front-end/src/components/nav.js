@@ -24,7 +24,7 @@ import './dropdown.css'
 
    handleFilter = (e) => {
      this.setState({
-       filterByGrade: e.target.value
+       filterByGrade: e.target.innerText
      })
    }
 
@@ -46,22 +46,22 @@ import './dropdown.css'
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto" >
-                <Nav.Link href="/home" ><h3 style={{color: "white"}}>Home</h3></Nav.Link>
-                <Nav.Link href="/favorites"><h3 style={{color: "white"}}>Favorites</h3></Nav.Link>
-                <NavDropdown title = "Grades" style={{color: 'red'}}   >
-                  <NavDropdown.Item href="#action/3.1" onChange = {(e)=>this.handleFilter(e)}>pre-k</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2" onChange = {(e)=>this.handleFilter(e)}>first_grade</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3" onChange = {(e)=>this.handleFilter(e)}>second_grade</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.1" onChange = {(e)=>this.handleFilter(e)}>third_grade</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2" onChange = {(e)=>this.handleFilter(e)}>forth_grade</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3" onChange = {(e)=>this.handleFilter(e)}>fifth_grade</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.1" onChange = {(e)=>this.handleFilter(e)}>sixth_grade</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2" onChange = {(e)=>this.handleFilter(e)}>seventh_grade</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3" onChange = {(e)=>this.handleFilter(e)}>eighth_grade</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.1" onChange = {(e)=>this.handleFilter(e)}>nineth_grade</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2" onChange = {(e)=>this.handleFilter(e)}>tenth_grade</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.1" onChange = {(e)=>this.handleFilter(e)}>eleventh_grade</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2" onChange = {(e)=>this.handleFilter(e)}>twelvth_grade</NavDropdown.Item>
+                <Nav.Link href="/home" ><h3 style={{color: "white",fontSize: '35px'}}>Home</h3></Nav.Link>
+                <Nav.Link href="/favorites"><h3 style={{color: "white", fontSize: '35px'}}>Favorites</h3></Nav.Link>
+                <NavDropdown title = "Grades" style={{backgroundColor: 'white',fontSize: '35px',color:'black'}} >
+                  <NavDropdown.Item   onClick = {(e)=>this.handleFilter(e)} style={{fontSize:'30px'}}>pre-k</NavDropdown.Item>
+                  <NavDropdown.Item   onClick = {(e)=>this.handleFilter(e)} style={{fontSize:'30px'}}>first_grade</NavDropdown.Item>
+                  <NavDropdown.Item   onClick = {(e)=>this.handleFilter(e)} style={{fontSize:'30px'}}>second_grade</NavDropdown.Item>
+                  <NavDropdown.Item   onClick = {(e)=>this.handleFilter(e)} style={{fontSize:'30px'}}>third_grade</NavDropdown.Item>
+                  <NavDropdown.Item   onClick = {(e)=>this.handleFilter(e)} style={{fontSize:'30px'}}>forth_grade</NavDropdown.Item>
+                  <NavDropdown.Item   onClick = {(e)=>this.handleFilter(e)} style={{fontSize:'30px'}}>fifth_grade</NavDropdown.Item>
+                  <NavDropdown.Item   onClick = {(e)=>this.handleFilter(e)} style={{fontSize:'30px'}}>sixth_grade</NavDropdown.Item>
+                  <NavDropdown.Item   onClick = {(e)=>this.handleFilter(e)} style={{fontSize:'30px'}}>seventh_grade</NavDropdown.Item>
+                  <NavDropdown.Item   onClick = {(e)=>this.handleFilter(e)} style={{fontSize:'30px'}}>eighth_grade</NavDropdown.Item>
+                  <NavDropdown.Item   onClick = {(e)=>this.handleFilter(e)} style={{fontSize:'30px'}}>nineth_grade</NavDropdown.Item>
+                  <NavDropdown.Item   onClick = {(e)=>this.handleFilter(e)} style={{fontSize:'30px'}}>tenth_grade</NavDropdown.Item>
+                  <NavDropdown.Item   onClick = {(e)=>this.handleFilter(e)} style={{fontSize:'30px'}}>eleventh_grade</NavDropdown.Item>
+                  <NavDropdown.Item   onClick = {(e)=>this.handleFilter(e)} style={{fontSize:'30px'}}>twelvth_grade</NavDropdown.Item>
                   <NavDropdown.Divider />
                   {/* <h3 style = {{color: 'white'}}> Grades</h3> */}
                 </NavDropdown>
@@ -81,7 +81,7 @@ import './dropdown.css'
 
            </Navbar.Collapse>
           </Navbar>
-          <MapContainer searchTerm = {this.state.searchTerm} onSearch = {this.changeSearchTerm} onFilter = {this.handleFilter}/>
+          <MapContainer searchTerm = {this.state.searchTerm}  filterTerm = {this.state.filterByGrade} onSearch = {this.changeSearchTerm} onFilter = {this.handleFilter}/>
 
         </div>
       )

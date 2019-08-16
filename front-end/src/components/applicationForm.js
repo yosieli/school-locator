@@ -2,6 +2,7 @@ import React from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import './signUp.css'
+import ApplicationSubmition from './applicationSubmition'
 
  class  ApplicationForm extends React.Component {
 
@@ -31,7 +32,7 @@ import './signUp.css'
 
             })
             }).then(user => {
-                console.log(user)
+            
                 if(this.state.first_name === '' || this.state.password === '' || this.state.last_name === '' || this.state.zip_code === ''|| this.state.current_grade === ''){
                   alert('Please input values for all')
                 }
@@ -42,9 +43,11 @@ import './signUp.css'
                 
                 else{
 
-                  this.props.history.push('/sign-in')
+                //   this.props.history.push('/applicationSubmit')
+                alert('thank you')
                 }
-              })
+            })
+              
 
     }
 
@@ -75,6 +78,7 @@ import './signUp.css'
                             <input name = "zip_code"    type = "name" placeholder = "zip_code" onChange={this.handleChange}/>
                             <input name = "current_grade"    type = "name" placeholder = "current_grade" onChange={this.handleChange}/>
                             <button style={{"border-radius": "10"}}>Submit Form </button>
+                            <br></br><br></br>
                             <button onClick ={()=>this.handleCancel()}>cancel</button>
                         </form>
                     </div>
