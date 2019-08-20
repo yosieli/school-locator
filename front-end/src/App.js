@@ -9,7 +9,7 @@ import Favorites from './components/favorites'
 import MapContainer from './components/mapContainer'
 import ApplicationForm from './components/applicationForm'
 import ApplicationSubmition from './components/applicationSubmition'
-import ModalForm from './components/modalForm'
+
 
 function App() {
   return (
@@ -22,8 +22,9 @@ function App() {
             <Route exact path = '/home' component={NavHome}/>
             <Route exact path = '/map' component = {MapContainer}/>
             <Route exact path = '/favorites' component = {Favorites}/>
-            <Route exact path = '/application' component = {ApplicationForm}/>
             <Route exact path = '/applicationSubmit' component ={ApplicationSubmition}/>
+            <Route exact path = '/application' component = {ApplicationForm}/>
+            
 
              {/* <Route exact path = '/modal' component = {ModalForm}/> */}
 

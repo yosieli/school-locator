@@ -58,9 +58,9 @@ export default class SignUp extends React.Component {
         return(
 
         <div className="login-page">
-            <h3 > <strong> Welcome to school locator </strong> </h3>
+            {/* <h3 > <strong> Welcome to school locator </strong> </h3> */}
               <br></br> <br></br>
-            <div autoPlay muted loop id="video-background"  style={{backgroundColor: 'gray'}}>
+            <div autoPlay muted loop id="video-background"  style={{backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMycqSZrVmNdNgg71L7AblCQWp1wXvZB1KJ5zoDFlCrznYNyBkeg')`,backgroundSize: 'cover'}}>
             </div>
                 <div className="form">
                     <form onSubmit={this.handleSubmit} className="login-form" >

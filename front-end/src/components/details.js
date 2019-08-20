@@ -11,6 +11,7 @@ class Details extends React.Component {
              <h4>description: {this.props.school.description}</h4>
              <h4>Rating: {this.props.school.rating}</h4>
              <h4>Zip_Code:{this.props.school.zip_code} </h4>
+             <h4>Grade: {this.props.school.grade}</h4>
           </div>
       )
    }

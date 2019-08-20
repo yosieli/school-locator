@@ -31,7 +31,7 @@
       position: relative;
       z-index: 1;
       background: #FFFFFF;
-      width: 500px;
+      width: 600px;
       margin: 0 auto 17%;
       padding: 45px;
       text-align: center;
@@ -52,7 +52,7 @@
       font-family: "Roboto", sans-serif;
       text-transform: uppercase;
       outline: 0;
-      background: rgb(54, 89, 184);
+      background: hsl(138, 79%, 42%);
       width: 100%;
       border: 0;
       padding: 15px;

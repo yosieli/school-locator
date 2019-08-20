@@ -49,10 +49,10 @@ export default class SignIn extends React.Component {
         return(
 
         <div className="login-page">
-            {/* <h3 > <strong> Welcome To School Finder </strong> </h3> */}
+            <h3  style= {{marginRight: '5px' ,color: '#00004d'}}> <strong> Welcome To School Finder </strong> </h3>
               <br></br>
               <br></br>
-            <div autoPlay muted loop id="video-background"  style={{backgroundImage: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT87l9XRDoXxrVI2354iOyqxrynvaFKuwXm7eBTL0o4Z9Jzqv_ClQ')}}>
+            <div autoPlay muted loop id="video-background"  style={{backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMycqSZrVmNdNgg71L7AblCQWp1wXvZB1KJ5zoDFlCrznYNyBkeg')`,backgroundSize: 'cover'}}>
             </div>
                 <div className="form">
                 <form onSubmit={this.handleSubmit} className="login-form">
@@ -64,7 +64,7 @@ export default class SignIn extends React.Component {
                 </form>
                 </div>
                 <h2> <strong> </strong> </h2>
-              </div>
+          </div>
         )
   }
 }

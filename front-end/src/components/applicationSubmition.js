@@ -3,7 +3,12 @@ class ApplicationSubmition extends React.Component {
    
     render() {
         return (
-            <h1>Thank you! Submition accepted  will contact you soon.</h1>
+            <div >
+               <h1 > Thankk you  Submittion accepted will contact you soon!</h1>
+               <a href="/favorites"><h1 style= {{marginLeft: '50px' ,fontSize:'50px'}}> back </h1> </a>
+            </div> 
+            
+            
         );
     }
 }

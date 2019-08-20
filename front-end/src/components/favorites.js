@@ -2,11 +2,15 @@
 import React from 'react'
 import Row from "react-bootstrap/Row"
 import FavoriteCards from './favoriteCards'
+import ApplicationForm from './applicationForm';
 
  class Favorites extends React.Component {
 
      state = {
-         favorites: []
+         favorites: [],
+         showCards: false,
+         showForm:false,
+
      }
 
      componentDidMount() {
@@ -25,6 +29,34 @@ import FavoriteCards from './favoriteCards'
             })
         })
      }
+
+     handleShowCard = () =>{
+         this.setState({
+             cardsShow:!this.state.cardsShow
+         })
+
+     }
+
+
+     handleShowForm = (school) =>{
+         fetch(`http://localhost:3000/favoriteSchools/${localStorage.getItem('user')}/${school.school_id}`,{
+             method: "PATCH",
+             headers:{
+                 'Content-Type': 'application/json',
+                 'Authorization': `Bearer ${localStorage.getItem('token')}`
+             },
+             body: JSON.stringify({
+                 has_applied:false
+             })
+         })
+         this.setState({
+             favorites:this.state.favorites
+         })
+
+       
+     }
+
+
 
       remove = (school) => {
 
@@ -45,15 +77,21 @@ import FavoriteCards from './favoriteCards'
      }
 
 
+     sendToPage = () => {
+         this.props.history.push('/applicationSubmit')
+     }
+
      render (){
 
          console.log(this.state.favorites)
          return(
-          <Row>
+          <Row style = {{backgroundColor: '#a3a375',height: '100vh'}}>
           {this.state.favorites.map(favorite =>{
               return(
-                  <FavoriteCards  favorite = {favorite}   remove = {this.remove}  />
-              )
+                  <div>
+                    <FavoriteCards  favorite = {favorite}   remove = {this.remove}  sendToPage={this.sendToPage} applay ={()=>this.handleShowForm(favorite)}/>
+                  </div>
+                  )
           })}
           </Row>
          )

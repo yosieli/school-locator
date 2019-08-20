@@ -71,7 +71,6 @@ import NavHome  from './nav.js'
 
     
     displayMarkers = () => {
-        console.log('filter',this.props.filterTerm)
         let filteredSchools = this.state.schools.filter( school => school.zip_code.includes(this.props.searchTerm) && school.grade.includes(this.props.filterTerm))
         if(filteredSchools){
             return filteredSchools.map((school, index) => {
@@ -86,13 +85,15 @@ import NavHome  from './nav.js'
         }
 
         else{
-            return this.state.schools.map((school, index) => {
+            let allschools= this.state.schools.map(school =>school.includes(this.props.allGrades))
+            console.log(this.props.allGrades)
+            return allschools.map((school, index) => {
                 return < Marker key={index} id={school.id} position={{
                 lat: school.latitude,
                 lng: school.longitude,
                 }}
-                onClick = {this.onMarkerClick}  
-                // onChange ={this.props.onSearch}
+                onClick = {this.onMarkerClick} 
+
                 />
             })
 
@@ -111,9 +112,8 @@ import NavHome  from './nav.js'
             body: JSON.stringify({
                 user_id: localStorage.getItem('user'),
                 school_id: school.id,
-                school_name: school.school_name,
-                description: school.description,
-                rating: school.rating
+                has_applied:false
+
                 
             })
         })
@@ -131,7 +131,6 @@ import NavHome  from './nav.js'
 
         return (
             <div>
-            {console.log('this is schools', selectedPlace)}
                 <Map 
                     google={this.props.google}
                     zoom={12}

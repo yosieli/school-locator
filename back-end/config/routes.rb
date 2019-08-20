@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post '/addFavorites', to: 'favorites#addToFavorites'
   get '/favoriteSchools/:id', to: "favorites#myFavorite"
   delete '/favoriteSchools/:user_id/:school_id', to: "favorites#destroy"
+  patch  '/favoriteSchools/:user_id/:school_id', to: "favorites#update"
 
   
 end

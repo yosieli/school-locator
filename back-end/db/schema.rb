@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_150133) do
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "school_id"
+    t.boolean "has_applied"
     t.string "school_name"
     t.string "rating"
     t.string "description"
