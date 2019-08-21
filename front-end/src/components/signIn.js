@@ -28,7 +28,6 @@ export default class SignIn extends React.Component {
         }).then(res=>res.json())
 
         .then(user => {
-            console.log('this is our user', user)
           if(user.error){
             alert('Incorrect first_name or Password. Please try again.')
             this.props.history.push('/sign-in')

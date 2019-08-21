@@ -40,7 +40,7 @@ import './dropdown.css'
     render (){
       return(
           <div >
-            <Navbar expand="lg"  style={{backgroundColor: "#000088"}} variant = "pills" defaultActiveKey="/home">
+            <Navbar expand="lg"  style={{backgroundColor: "#3333ff"}} variant = "pills" defaultActiveKey="/home">
               <Navbar.Brand href="#home">
                 <img
                   alt="logo"
@@ -55,9 +55,9 @@ import './dropdown.css'
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto" >
-                  <Nav.Link href="/home" ><h3 style={{color: "white",fontSize: '38px'}}>Home</h3></Nav.Link>
-                  <Nav.Link href="/favorites"><h3 style={{color: "white", fontSize: '38px'}}>Favorites</h3></Nav.Link>
-                  <NavDropdown title = "Grades" style={{fontSize: '35px',backgroundColor:'white'}} >
+                  <Nav.Link href="/sign-in" ><h3 style={{color: "white",fontSize: '40px',fontStyle: 'arial'}}>Home</h3></Nav.Link><br></br><br></br>
+                  <Nav.Link href="/favorites"><h3 style={{color: "white", fontSize: '40px'}}>Favorites</h3></Nav.Link><br></br><br></br>
+                  <NavDropdown title = "Grades" style={{fontSize: '35px',backgroundColor:'white'}} ><br></br><br></br>
                     <NavDropdown.Item   style={{fontSize:'30px'}} onClick = {(e) =>this.handelAllGrades(e)}>all_grades</NavDropdown.Item>
                     <NavDropdown.Item   onClick = {(e)=>this.handleFilter(e)} style={{fontSize:'30px'}}>pre-k</NavDropdown.Item>
                     <NavDropdown.Item   onClick = {(e)=>this.handleFilter(e)} style={{fontSize:'30px'}}>grade-01</NavDropdown.Item>
@@ -75,10 +75,11 @@ import './dropdown.css'
                     <NavDropdown.Divider />
                   </NavDropdown>
                 </Nav>
-                <Form inline>
+                <Form inline style = {{position:'relative',padding: '0px',margin: '0px'}}>
                   
-                  <FormControl type="text" placeholder="Search by zip-code" className="mr-sm-2" onChange = {(e)=> this.changeSearchTerm(e)}/>
-                  <Button  variant="success" size="lg" >Search</Button>
+                  <FormControl type="text" placeholder="Search by zip-code" className="mr-sm-2" onChange = {(e)=> this.changeSearchTerm(e)} style={{height: '45px',margin: '0px',paddingLeft: '30px'}}/>
+                  <img src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCYzMtLaVXDPydWiAP8SpDJcv6_EPXetPOx6XPuRB0sfg489cK' style ={{position:'absolute',bottom:'8px',left: '200px',width: '30px',height: '30px' ,backgroundColor:'' }}></img>
+                  {/* <Button  variant="success" size="lg" >Search</Button> */}
                 </Form>
                 <Nav.Link onClick={() => {
                     localStorage.clear()

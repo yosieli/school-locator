@@ -15,14 +15,13 @@ function  FavoriteCards (props) {
     return (
         <div>
             <Col sm ={5}>
-            <Card style={{ opacity: '.9','border-radius': '7px', marginLeft: '16%', marginTop: '10%',height: '43vh',width: '40vh',fontStyle: 'bold'}}>
+            <Card style={{ opacity: '.9','border-radius': '7px', marginLeft: '16%', marginTop: '10%',height: '40vh',width: '40vh',fontStyle: 'bold'}}>
                     <Card.Body>
-                        <Card.Title><h3>School Name: {props.favorite.school.school_name}</h3></Card.Title>
-                        <Card.Text><h4>Description: {props.favorite.school.description}</h4></Card.Text>
-                        <Card.Text><h4>Rating: {props.favorite.school.rating}</h4></Card.Text>
-                        <Card.Text><h4>Grade: {props.favorite.school.grade}</h4></Card.Text>
+                        <Card.Title><h4 style ={{color: '#000066'}}>School Name: {props.favorite.school.school_name}</h4></Card.Title>
+                        <Card.Text><h4 >Description: {props.favorite.school.description}</h4></Card.Text>
+                        <Card.Text><h4 >Rating: {props.favorite.school.rating}</h4></Card.Text>
+                        <Card.Text><h4 >Grade: {props.favorite.school.grade}</h4></Card.Text>
                         <Button  variant="outline-success" style = {{marginTop: '5px' }} onClick = {()=>props.applay(props.favorite)} size = 'lg' >Apply</Button>
-
                         {console.log(props.favorite)}
                         <br></br>
                         {props.favorite.has_applied ?
@@ -32,7 +31,7 @@ function  FavoriteCards (props) {
                             <Modal.Header closeButton>
                                 <Modal.Title>APPLICATION CONFIRMATION</Modal.Title>
                             </Modal.Header>
-                            <Modal.Body><h5>Thank You! Application Submitted to {props.favorite.school.school_name}, will contact you soon</h5></Modal.Body>
+                            <Modal.Body><h5>Thank You! Your Application has been Submitted to {props.favorite.school.school_name}, will contact you soon</h5></Modal.Body>
                             <Modal.Footer>
                                 <Button variant="outline-danger" onClick={handleClose}>
                                 Close

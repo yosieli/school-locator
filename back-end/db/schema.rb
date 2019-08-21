@@ -19,9 +19,6 @@ ActiveRecord::Schema.define(version: 2019_08_07_150133) do
     t.integer "user_id"
     t.integer "school_id"
     t.boolean "has_applied"
-    t.string "school_name"
-    t.string "rating"
-    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_150133) do
     t.string "current_grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["first_name"], name: "index_users_on_first_name", unique: true
   end
 
 end

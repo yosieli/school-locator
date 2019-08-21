@@ -8,5 +8,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :current_grade
       t.timestamps
     end
+    add_index :users, :first_name, unique: true
   end
 end
