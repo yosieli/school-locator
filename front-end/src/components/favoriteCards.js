@@ -15,7 +15,7 @@ function  FavoriteCards (props) {
     return (
         <div>
             <Col sm ={5}>
-            <Card style={{ opacity: '.9','border-radius': '7px', marginLeft: '16%', marginTop: '10%',height: '40vh',width: '40vh',fontStyle: 'bold'}}>
+            <Card style={{ opacity: '.9','border-radius': '7px', marginLeft: '16%', marginTop: '10%',height: '40vh',width: '40vh',fontStyle: 'bold',borderColor: 'grey',boxShadow: 'inset 0 0 10px #000000',boxSizing: 'content box',borderStyle: 'ridge'}}>
                     <Card.Body>
                         <Card.Title><h4 style ={{color: '#000066'}}>School Name: {props.favorite.school.school_name}</h4></Card.Title>
                         <Card.Text><h4 >Description: {props.favorite.school.description}</h4></Card.Text>

@@ -134,7 +134,7 @@ import Button from 'react-bootstrap/Button'
                 <Map 
                     google={this.props.google}
                     zoom={12}
-                    style={{width: '100%', height: '100%', topmargin: '10px'}}
+                    style={{width: '100%', height: '100%', topmargin: '20px'}}
                     initialCenter={{ lat: 29.731589, lng: -95.310856}}
                 >
                     
