@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :define_current_user, only: [ :authenticate, :create]
+  skip_before_action :define_current_user, only: [ :authenticate, :create,:applicationForm]
 
     def index
      render json: User.all
@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     def create
     user = User.create(users_params)
     render json: user
-    # raul doesnt know if this is right but it works
+  
     end
 
     def show
@@ -16,9 +16,15 @@ class UsersController < ApplicationController
       render json: user
     end
 
+    def applicationForm
+    user = User.create(users_params)
+    render json: user
+    
+    end
+
 
     def users_params
-        params.permit(:first_name, :last_name, :password,:zip_code,:current_grade)
+        params.permit(:first_name, :last_name, :password,:zip_code,:current_grade, :user)
     end
     
 

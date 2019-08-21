@@ -10,6 +10,11 @@ class SchoolsController < ApplicationController
         render json: user
     end
 
+    def destroy
+        school = School.find(params[:id])
+        School.destroy(school)
+    end
+
     
 
 end

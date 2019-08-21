@@ -5,6 +5,7 @@ class CreateSchools < ActiveRecord::Migration[5.2]
       t.integer :rating
       t.string :zip_code
       t.string :description
+      t.string :grade
       t.float :latitude
       t.float :longitude
       t.timestamps

@@ -18,9 +18,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_150133) do
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "school_id"
-    t.string "school_name"
-    t.string "rating"
-    t.string "description"
+    t.boolean "has_applied"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_150133) do
     t.integer "rating"
     t.string "zip_code"
     t.string "description"
+    t.string "grade"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", null: false
@@ -44,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_150133) do
     t.string "current_grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["first_name"], name: "index_users_on_first_name", unique: true
   end
 
 end

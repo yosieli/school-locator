@@ -15,28 +15,32 @@ class FavoritesController < ApplicationController
     def addToFavorites
         user = User.find(params[:user_id])
         school = School.find(params[:school_id])
-        favorite = Favorite.create(user_id: user.id, school_id: school.id)
-        puts
-        render json: favorite
-    
+        if !Favorite.find_by(user_id: user.id, school_id: school.id)
+                favorite = Favorite.create(user_id: user.id, school_id: school.id)
+                render json: favorite
+            else
+                render json: {message: "already favoritededed"}
+        end
     end
 
     def destroy
+        
         user = User.find(params[:user_id])
         school = School.find(params[:school_id])
         removeSchool = Favorite.where(user_id: user.id, school_id: school.id)
-        Favorite.destroy(removeSchool)
+        removeSchool = removeSchool[0]
+        removeSchool.destroy()
+        render json: removeSchool,methods: [:school]
     end
 
-    # if !Favorite.find_by(user_id: user.id, school_id: school.id)
-    #     favorite = Favorite.create(user_id: user.id, school_id: school.id)
-    #     render json: favorite
-    # else
-    #     render json: {message: "already favoritededed"}
+    def update
+        user = User.find(params[:user_id])
+        school =School.find(params[:school_id])
+        updatedSchool = Favorite.where(user_id: user.id, school_id: school.id)
+        updatedSchool = updatedSchool[0]
+        updatedSchool.update(has_applied: true)
+        render json: updatedSchool, methods: [:school]
+    end
     
-    
-
-    
-
 
 end
