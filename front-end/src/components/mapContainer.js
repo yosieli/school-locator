@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Map, GoogleApiWrapper, Marker,InfoWindow} from 'google-maps-react'
 import Details from './details'
 import Button from 'react-bootstrap/Button'
-import NavHome  from './nav.js'
+
 
 
  class MapContainer extends React.Component {

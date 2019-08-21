@@ -30,13 +30,16 @@ class FavoritesController < ApplicationController
         removeSchool = Favorite.where(user_id: user.id, school_id: school.id)
         removeSchool = removeSchool[0]
         removeSchool.destroy()
+        render json: removeSchool,methods: [:school]
     end
 
     def update
         user = User.find(params[:user_id])
         school =School.find(params[:school_id])
         updatedSchool = Favorite.where(user_id: user.id, school_id: school.id)
+        updatedSchool = updatedSchool[0]
         updatedSchool.update(has_applied: true)
+        render json: updatedSchool, methods: [:school]
     end
     
 

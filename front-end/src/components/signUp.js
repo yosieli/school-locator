@@ -64,6 +64,7 @@ export default class SignUp extends React.Component {
             </div>
                 <div className="form">
                     <form onSubmit={this.handleSubmit} className="login-form" >
+                    <h1 style = {{color: '#000066'}}> Wel Come To School Finder</h1><br></br>
                     <input name = "first_name"  type="name" placeholder="first_name" onChange={this.handleChange}/>
                     <input name = "last_name"    type = "name" placeholder = "last_name" onChange={this.handleChange}/>
                     <input name = "password"  type="name" placeholder="password" onChange={this.handleChange}/>
@@ -71,7 +72,7 @@ export default class SignUp extends React.Component {
                     <input name = "current_grade"    type = "name" placeholder = "current_grade" onChange={this.handleChange}/>
                     <button style={{"border-radius": "7px"}}>Sign Up</button>
                     
-                        <p className="message"><h3>Already registered?</h3> <a href="sign-in"><h3>Sign In</h3></a></p>
+                        <p className="message"><h3>Already registered?</h3> <a href="sign-in" style ={{color: '#000066'}}><h3>Sign In</h3></a></p>
                     </form>
                 </div>
                 <h2> <strong> </strong> </h2>

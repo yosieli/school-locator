@@ -4,9 +4,9 @@ class CreateFavorites < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.integer :school_id
       t.boolean :has_applied
-      t.string :school_name
-      t.string :rating
-      t.string :description
+      # t.string :school_name
+      # t.string :rating
+      # t.string :description
       t.timestamps
     end
   end

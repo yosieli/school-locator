@@ -37,6 +37,22 @@ School.create(school_name:'Aquilla Wyatt High School', rating:4.3, zip_code: 770
 School.create(school_name:'Wisdom High School', rating:3.9, zip_code: 77081, description: 'The best school',grade:'grade-11',latitude: 29.729375 ,longitude: -95.499895)
 School.create(school_name:'Liberty High School', rating:3.3, zip_code: 77025, description: 't’s a Good school students can learn and do extra activities',grade:'grade-12',latitude: 29.699387, longitude: -95.531532)
 School.create(school_name:'Sharpstown High School', rating:3.9, zip_code: 77025, description: 'greate school. nice teachers.',grade:'grade-12',latitude: 29.686609, longitude: -95.515092)
+School.create(school_name:'Field Elementary School', rating:4.3, zip_code: 77008, description: 'great learning environment',grade:'pre-k',latitude:29.802052, longitude: -95.389106)
+School.create(school_name:'Veritas Christian Academy of Houston', rating:5, zip_code: 77402, description: 'wonderful place',grade:'grade-01',latitude: 29.715047, longitude: -95.412112)
+School.create(school_name:'St. Michael Learning Academy', rating:4.2, zip_code: 77057, description: 'Professional staff always make you feel welcomed',grade:'grade-2',latitude: 29.832939, longitude: -95.370227)
+School.create(school_name:'Bellaire Elementary  School', rating:4.8, zip_code:  77402, description: 'greate school/excellent teachers',grade:'grade-3',latitude: 29.718399, longitude: -95.435307)
+School.create(school_name:'Challenge Early  School', rating:4.0, zip_code: 77402, description: 'The school is amazing.The teachers are so nice.',grade:'grade-4',latitude: 29.807982, longitude: -95.406986)
+School.create(school_name:'Aquilla Wyatt Elementary School', rating:4.3, zip_code: 77081, description: 'Definitely a good school, would highly recommend it,',grade:'grade-5',latitude: 29.662584, longitude: -95.465046)
+School.create(school_name:'Wisdom  School', rating:3.9, zip_code: 77081, description: 'The best school',grade:'grade-6',latitude: 29.701632 ,longitude: -95.438029)
+School.create(school_name:'Liberty Middle School', rating:3.3, zip_code: 77025, description: 't’s a Good school students can learn and do extra activities',grade:'grade-7',latitude: 29.680080, longitude: -95.308144)
+School.create(school_name:'Sharpstown Middle School', rating:3.9, zip_code: 77025, description: 'greate school. nice teachers.',grade:'grade-8',latitude: 29.807556, longitude: -95.317698)
+School.create(school_name:'Briarmeadow Charter School', rating:4.4, zip_code: 77401, description: 'great learning environment',grade:'grade-9',latitude:29.841047, longitude: -95.416954)
+School.create(school_name:'Veritas Christian Academy of Houston', rating:5, zip_code: 77401, description: 'wonderful place',grade:'grade-10',latitude: 29.685136, longitude: -95.375135)
+School.create(school_name:'St. Michael Learning Academy', rating:4.2, zip_code: 77057, description: 'Professional staff always make you feel welcomed',grade:'grade-11',latitude: 29.797185, longitude: -95.428382)
+School.create(school_name:'Bellaire High School', rating:4.8, zip_code:  77401, description: 'greate school/excellent teachers',grade:'grade-12',latitude: 29.698707, longitude: -95.455775)
+
+
+
 
 
 

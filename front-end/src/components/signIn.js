@@ -45,26 +45,26 @@ export default class SignIn extends React.Component {
     }
 
 
- render(){
+    render(){
         return(
 
-        <div className="login-page">
-            <h3  style= {{marginRight: '5px' ,color: '#00004d'}}> <strong> Welcome To School Finder </strong> </h3>
-              <br></br>
-              <br></br>
-            <div autoPlay muted loop id="video-background"  style={{backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMycqSZrVmNdNgg71L7AblCQWp1wXvZB1KJ5zoDFlCrznYNyBkeg')`,backgroundSize: 'cover'}}>
-            </div>
-                <div className="form">
-                <form onSubmit={this.handleSubmit} className="login-form">
-                <input name = "first_name"  type="name" placeholder="first_name" onChange={this.handleChange}/>
-                <input name = "password"    type = "name" placeholder = "password" onChange={this.handleChange}/>
-                  <button style={{"border-radius": "7px"}}>Sign In</button>
-                   
-                    <p className="message"><h3>Not registered?<a href="sign-up"><br></br>Sign Up</a></h3></p>
-                </form>
+            <div className="login-page">
+                  <br></br>
+                  <br></br>
+                <div autoPlay muted loop id="video-background"  style={{backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMycqSZrVmNdNgg71L7AblCQWp1wXvZB1KJ5zoDFlCrznYNyBkeg')`,backgroundSize: 'cover'}}>
                 </div>
-                <h2> <strong> </strong> </h2>
-          </div>
+                    <div className="form">
+                    <form onSubmit={this.handleSubmit} className="login-form">
+                      <h1 style = {{color: '#000066'}}> WelCome To School Finder</h1><br></br>
+                      <input name = "first_name"  type="name" placeholder="first_name" onChange={this.handleChange}/>
+                      <input name = "password"    type = "name" placeholder = "password" onChange={this.handleChange}/>
+                        <button style={{"border-radius": "7px"}}>Sign In</button>
+                        
+                        <p className="message" ><h3 >Not registered?<a href="sign-up" style = {{color: '#000066'}}><br></br>Sign Up</a></h3></p>
+                    </form>
+                    </div>
+                    <h2> <strong> </strong> </h2>
+              </div>
         )
-  }
-}
+    }
+}  

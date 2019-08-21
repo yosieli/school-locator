@@ -2,18 +2,14 @@
 import React from 'react'
 import Row from "react-bootstrap/Row"
 import FavoriteCards from './favoriteCards'
-import ApplicationForm from './applicationForm';
 
  class Favorites extends React.Component {
 
      state = {
-         favorites: [],
-         showCards: false,
-         showForm:false,
-
+         favorites: []
      }
 
-     componentDidMount() {
+    componentDidMount() {
         fetch(`http://localhost:3000/favoriteSchools/${localStorage.getItem('user')}`, {
             method: "GET",
             headers: {
@@ -28,17 +24,9 @@ import ApplicationForm from './applicationForm';
                 favorites: data
             })
         })
-     }
+    }
 
-     handleShowCard = () =>{
-         this.setState({
-             cardsShow:!this.state.cardsShow
-         })
-
-     }
-
-
-     handleShowForm = (school) =>{
+    handleApply = (school) =>{
          fetch(`http://localhost:3000/favoriteSchools/${localStorage.getItem('user')}/${school.school_id}`,{
              method: "PATCH",
              headers:{
@@ -46,19 +34,20 @@ import ApplicationForm from './applicationForm';
                  'Authorization': `Bearer ${localStorage.getItem('token')}`
              },
              body: JSON.stringify({
-                 has_applied:false
+                 has_applied: true
              })
          })
-         this.setState({
-             favorites:this.state.favorites
+         .then(r => r.json())
+         .then( fav => {
+             this.setState({
+                 favorites: this.state.favorites.map( eachFav => eachFav.id === fav.id ? fav : eachFav )
+             })
          })
 
        
-     }
+    }
 
-
-
-      remove = (school) => {
+    remove = (school) => {
 
             fetch(`http://localhost:3000/favoriteSchools/${localStorage.getItem('user')}/${school.school_id}`,{
                 method: "DELETE",
@@ -74,28 +63,27 @@ import ApplicationForm from './applicationForm';
             this.setState({
                 favorites: mySchools
             })
-     }
+    }
 
 
-     sendToPage = () => {
-         this.props.history.push('/applicationSubmit')
-     }
+    render (){
 
-     render (){
-
-         console.log(this.state.favorites)
-         return(
-          <Row style = {{backgroundColor: '#a3a375',height: '100vh'}}>
-          {this.state.favorites.map(favorite =>{
-              return(
-                  <div>
-                    <FavoriteCards  favorite = {favorite}   remove = {this.remove}  sendToPage={this.sendToPage} applay ={()=>this.handleShowForm(favorite)}/>
-                  </div>
-                  )
-          })}
+        let allFavorites = this.state.favorites
+        console.log(allFavorites.length)
+       
+        return(
+          <Row style = {{backgroundColor: '#b3cccc',height: '100vh'}}>   
+                    {
+                        allFavorites.length > 0  ?
+                            allFavorites.map(favorite =>{
+                            return<FavoriteCards  favorite = {favorite}   remove = {this.remove}   applay ={()=>this.handleApply(favorite)}/>
+                            })
+                        :
+                        <a href ="./home" style={{fontSize: '50px',marginLeft: '50px'}}>Back</a>
+                    }
           </Row>
-         )
-     }
+        )
+    }
  }
 
 
