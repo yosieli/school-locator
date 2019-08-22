@@ -20,6 +20,7 @@ import Button from 'react-bootstrap/Button'
 
 
     onMarkerClick = (props, marker, e) => {
+        console.log(props)
         this.setState({
         selectedPlace: props,
         activeMarker: marker,
@@ -134,7 +135,7 @@ import Button from 'react-bootstrap/Button'
                 <Map 
                     google={this.props.google}
                     zoom={12}
-                    style={{width: '100%', height: '100%', topmargin: '20px'}}
+                    style={{width: '100%', height: '100%',}}
                     initialCenter={{ lat: 29.731589, lng: -95.310856}}
                 >
                     

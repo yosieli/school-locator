@@ -11,6 +11,7 @@ class FavoritesController < ApplicationController
         favorite = Favorite.where(user_id: user.id)
         render json: favorite, methods: [:school]
     end
+    
 
     def addToFavorites
         user = User.find(params[:user_id])
@@ -23,6 +24,7 @@ class FavoritesController < ApplicationController
         end
     end
 
+
     def destroy
         
         user = User.find(params[:user_id])
@@ -32,6 +34,7 @@ class FavoritesController < ApplicationController
         removeSchool.destroy()
         render json: removeSchool,methods: [:school]
     end
+
 
     def update
         user = User.find(params[:user_id])

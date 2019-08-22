@@ -31,7 +31,7 @@ function  FavoriteCards (props) {
                             <Modal.Header closeButton>
                                 <Modal.Title>APPLICATION CONFIRMATION</Modal.Title>
                             </Modal.Header>
-                            <Modal.Body><h5>Thank You! Your Application has been Submitted to {props.favorite.school.school_name}, will contact you soon</h5></Modal.Body>
+                            <Modal.Body><h5>Thank You! Your Application has been Submitted to {props.favorite.school.school_name}, will contact you soon.</h5></Modal.Body>
                             <Modal.Footer>
                                 <Button variant="outline-danger" onClick={handleClose}>
                                 Close

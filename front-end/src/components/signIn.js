@@ -54,7 +54,7 @@ export default class SignIn extends React.Component {
                 </div>
                     <div className="form">
                     <form onSubmit={this.handleSubmit} className="login-form">
-                      <h1 style = {{color: '#000066'}}> WelCome To School Finder</h1><br></br>
+                      <h1 style = {{color: '#000066',fontStyle: 'normal'}}> WelCome To School Finder</h1><br></br>
                       <input name = "first_name"  type="name" placeholder="first_name" onChange={this.handleChange}/>
                       <input name = "password"    type = "name" placeholder = "password" onChange={this.handleChange}/>
                         <button style={{"border-radius": "7px"}}>Sign In</button>
