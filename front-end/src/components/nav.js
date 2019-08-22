@@ -28,7 +28,6 @@ import './dropdown.css'
       this.setState({
         allGrades: e.target.value,
         filterByGrade: '',
-        searchTerm:''
       })
     }
 
