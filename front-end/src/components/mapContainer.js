@@ -80,7 +80,6 @@ import Button from 'react-bootstrap/Button'
                 lng: school.longitude,
                 }}
                 onClick = {this.onMarkerClick}  
-                // onChange ={this.props.onSearch}
                 />
             })
         }
@@ -163,5 +162,5 @@ import Button from 'react-bootstrap/Button'
 
 export default GoogleApiWrapper ({
     apiKey: 'AIzaSyCGkLGCv3BgUFVYOfNBk5oBmvH6ou-wU8w'
-  })(MapContainer)
+})(MapContainer)
 
