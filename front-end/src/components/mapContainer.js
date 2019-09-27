@@ -123,9 +123,8 @@ import Button from 'react-bootstrap/Button'
     }
     
 
-    
-
     render() {
+        
     let selectedPlace = this.state.schools.find(school => school.id === this.state.selectedPlace.id) || null || {}
     console.log('mapContainer loaded')
 

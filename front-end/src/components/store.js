@@ -8,9 +8,7 @@ const initialState = {
 const reducer = (currentState, action) => {
     switch (action.type) {
         case 'RESPONSE_SUBMITTED':
-            // fetch( ,{
-        
-            // })
+            
             history.push('/')
         break;
     }
