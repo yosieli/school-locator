@@ -79,7 +79,7 @@ import FavoriteCards from './favoriteCards'
                             return<FavoriteCards  favorite = {favorite}   remove = {this.remove}   applay ={()=>this.handleApply(favorite)}/>
                             })
                         :
-                        <a href ="./home" style={{fontSize: '50px',marginLeft: '50px'}}>Back</a>
+                        <a href ="./" style={{fontSize: '50px',marginLeft: '50px'}}>Back</a>
                     }
           </Row>
         )

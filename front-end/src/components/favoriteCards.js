@@ -44,7 +44,7 @@ function  FavoriteCards (props) {
                         }
                         <Button variant = "outline-danger" onClick = {() =>props.remove(props.favorite)} size = 'lg'>Remove </Button>
                         <br></br><br></br>
-                        <a href = './home' style={{color: 'green'}}><h3>Back</h3></a>
+                        <a href = './' style={{color: 'green'}}><h3>Back</h3></a>
                     </Card.Body>
             </Card>
             </Col>
